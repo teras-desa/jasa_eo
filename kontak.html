@@ -4,121 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kontak - Simpay Sawargi</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0; padding: 0;
-      background: #f5f5f5;
-      color: #333;
-    }
-    header {
-      background: #25d366;
-      color: #fff;
-      padding: 1rem;
-      text-align: center;
-    }
-    header h1 { margin: 0; }
-    nav {
-      margin-top: 0.5rem;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 0.8rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a.active {
-      text-decoration: underline;
-    }
-
-    main { padding: 2rem; }
-
-    /* Kontak */
-    .kontak {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 2rem;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-    .kontak h2 {
-      text-align: center;
-      margin-bottom: 1rem;
-      color: #2c3e50;
-    }
-    .kontak h3 {
-      text-align: center;
-      margin-top: 1.5rem;
-      margin-bottom: 0.5rem;
-      color: #2c3e50;
-    }
-    .kontak p {
-      text-align: justify;
-      margin-bottom: 0.5rem;
-    }
-    .kontak a {
-      color: #25d366;
-      text-decoration: none;
-    }
-    .kontak a:hover {
-      text-decoration: underline;
-    }
-
-    .form-kontak {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    .form-kontak input,
-    .form-kontak textarea {
-      padding: 0.8rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1rem;
-      width: 100%;
-      box-sizing: border-box;
-      font-family: inherit;
-      line-height: 1.5;
-    }
-    .form-kontak textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-
-    .btn {
-      background-color: #25d366;
-      color: #fff;
-      border: none;
-      padding: 0.9rem;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      text-align: center;
-      transition: background 0.3s;
-      display: inline-block;
-    }
-    .btn:hover {
-      background-color: #1ebe5b;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #eee;
-      margin-top: 2rem;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <h1>Simpay Sawargi</h1>
     <nav>
-        <a href="index.html">Beranda</a>
-        <a href="paket.html">Paket</a>
-        <a href="galeri.html">Galeri</a>
-        <a href="kontak.html" class="active">Kontak</a>
+      <a href="index.html">Beranda</a>
+      <a href="paket.html">Paket</a>
+      <a href="galeri.html">Galeri</a>
+      <a href="kontak.html" class="active">Kontak</a>
     </nav>
   </header>
 
@@ -126,18 +21,20 @@
     <section class="kontak">
       <h2>Hubungi Kami</h2>
 
-      <h3>Alamat</h3>
-      <p>Keresek Tua Desa Sumurgintung Kecamatan Pagaden Barat <br>
-         Jl. Gunungsembung-Sumurgintung Km. 3 Kode Pos 41252 <br>
-         Kabupaten Subang Jawa Barat</p>
+      <p><strong>Alamat:</strong><br>
+      Keresek Tua Desa Sumurgintung Kecamatan Pagaden Barat <br>
+      Jl. Gunungsembung-Sumurgintung Km. 3 Kode Pos 41252 <br>
+      Kabupaten Subang Jawa Barat</p>
 
-      <h3>Telp</h3>
-      <p><a href="tel:081382881610">0813-8288-1610</a></p>
+      <p><strong>Telp:</strong> 
+        <a href="tel:081382881610">0813-8288-1610</a>
+      </p>
 
-      <h3>Email</h3>
-      <p><a href="mailto:wh1274029@gmail.com">wh1274029@gmail.com</a></p>
+      <p><strong>Email:</strong> 
+        <a href="mailto:wh1274029@gmail.com">wh1274029@gmail.com</a>
+      </p>
 
-      <p style="text-align:center;">
+      <p style="text-align:center; margin: 20px 0;">
         <a href="https://wa.me/6281382881610" class="btn">Chat via WhatsApp</a>
       </p>
 
@@ -159,18 +56,25 @@
 
   <script>
     document.getElementById("formKontak").addEventListener("submit", function(e){
-      e.preventDefault(); 
+      e.preventDefault(); // mencegah reload halaman
 
+      // ambil data form
       let nama = document.getElementById("nama").value;
       let desa = document.getElementById("desa").value;
       let tanggal = document.getElementById("tanggal").value;
       let tamu = document.getElementById("tamu").value;
       let pesan = document.getElementById("pesan").value;
 
-      let nomor = "6281382881610"; 
+      // nomor WA tujuan (ubah sesuai nomor EO)
+      let nomor = "6281382881610";
 
-      let text = `Halo Simpay Sawargi,%0ASaya ${nama} dari desa ${desa}.%0AIngin mengadakan acara pada ${tanggal} dengan tamu sekitar ${tamu} orang.%0A%0APesan: ${pesan}`;
+      // format pesan (dengan encode newline %0A)
+      let text = `Halo Simpay Sawargi,%0A
+Saya ${nama} dari desa ${desa}.%0A
+Ingin mengadakan acara pada ${tanggal} dengan tamu sekitar ${tamu} orang.%0A%0A
+Pesan: ${pesan}`;
 
+      // buka WhatsApp
       window.open(`https://wa.me/${nomor}?text=${text}`, "_blank");
     });
   </script>
