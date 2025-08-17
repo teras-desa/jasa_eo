@@ -41,6 +41,7 @@ header nav a:hover {
   margin-bottom: 20px;
 }
 .btn {
+  text-align: center;
   display: inline-block;
   background: #FFD700;
   color: #000;
