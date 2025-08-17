@@ -11,6 +11,9 @@
       padding: 0;
       background: #f7f7f7;
       color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
     header {
       background: #2c3e50;
@@ -28,6 +31,10 @@
       text-decoration: underline;
     }
     main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
       padding: 2rem;
     }
     footer {
@@ -41,11 +48,13 @@
     /* === STYLE KONTAK === */
     .kontak {
       max-width: 700px;
+      width: 100%;
       margin: 0 auto;
       padding: 2rem;
       background: #fff;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      text-align: justify; /* semua teks dalam box rata kiri-kanan */
     }
 
     .kontak h2, 
@@ -112,12 +121,11 @@
     <section class="kontak">
       <h2>Hubungi Kami</h2>
       <p><strong>Alamat:</strong> Keresek Tua Desa Sumurgintung Kecamatan Pagaden Barat <br>Jl. Gunungsembung-Sumurgintung Km. 3 Kode Pos 41252 <br>Kabupaten Subang Jawa Barat</p>
-      <br>
       <p><strong>Telp:</strong> <a href="tel:081382881610">0813-8288-1610</a></p>
-      <br>
       <p><strong>Email:</strong> <a href="mailto:wh1274029@gmail.com">wh1274029@gmail.com</a></p>
-      <br>
-      <a href="https://wa.me/6281382881610" class="btn">Chat via WhatsApp</a>
+      <p style="text-align:center;">
+        <a href="https://wa.me/6281382881610" class="btn">Chat via WhatsApp</a>
+      </p>
 
       <h3>Kirim Pesan Cepat</h3>
       <form id="formKontak" class="form-kontak">
@@ -137,24 +145,15 @@
 
   <script>
     document.getElementById("formKontak").addEventListener("submit", function(e){
-      e.preventDefault(); // mencegah reload halaman
+      e.preventDefault();
 
-      // ambil data form
       let nama = document.getElementById("nama").value;
       let desa = document.getElementById("desa").value;
       let tanggal = document.getElementById("tanggal").value;
       let tamu = document.getElementById("tamu").value;
       let pesan = document.getElementById("pesan").value;
 
-      // nomor WA tujuan
       let nomor = "6281382881610"; 
-
-      // format pesan
       let text = `Halo Simpay Sawargi,%0ASaya ${nama} dari desa ${desa}.%0AIngin mengadakan acara pada ${tanggal} dengan tamu sekitar ${tamu} orang.%0A%0APesan: ${pesan}`;
 
-      // buka WhatsApp
-      window.open(`https://wa.me/${nomor}?text=${text}`, "_blank");
-    });
-  </script>
-</body>
-</html>
+      window.open(`https://wa
