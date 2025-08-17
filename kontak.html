@@ -1,39 +1,68 @@
-<section class="kontak">
-  <h2>Hubungi Kami</h2>
-  <p><strong>Alamat:</strong> Keresek Tua Desa Sumurgintung Kecamatan Pagaden Barat, Jl. Gunungsembung-Sumurgintung, Kabupaten Subang</p>
-  <p><strong>Telp:</strong> <a href="tel:081382881610">0813-8288-1610</a></p>
-  <p><strong>Email:</strong> <a href="mailto:wh1274029@gmail.com">wh1274029@gmail.com</a></p>
-  <a href="https://wa.me/6281382881610" class="btn">Chat via WhatsApp</a>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontak - Simpay Sawargi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Simpay Sawargi</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="paket.html">Paket</a></li>
+        <li><a href="galeri.html">Galeri</a></li>
+        <li><a href="kontak.html" class="active">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <h3>Kirim Pesan Cepat</h3>
-  <form id="formKontak" class="form-kontak">
-    <input type="text" id="nama" placeholder="Nama Anda" required>
-    <input type="text" id="desa" placeholder="Nama Desa" required>
-    <input type="date" id="tanggal" required>
-    <input type="number" id="tamu" placeholder="Jumlah Tamu" required>
-    <textarea id="pesan" placeholder="Pesan / Kebutuhan" rows="4"></textarea>
-    <button type="submit" class="btn">Kirim Pesan</button>
-  </form>
-</section>
+  <main>
+    <section class="kontak">
+      <h2>Hubungi Kami</h2>
+      <p><strong>Alamat:</strong> Keresek Tua Desa Sumurgintung Kecamatan Pagaden Barat, Jl. Gunungsembung-Sumurgintung Km. 3 Kode Pos 41252, Kabupaten Subang</p>
+      <p><strong>Telp:</strong> <a href="tel:081382881610">0813-8288-1610</a></p>
+      <p><strong>Email:</strong> <a href="mailto:wh1274029@gmail.com">wh1274029@gmail.com</a></p>
+      <a href="https://wa.me/6281382881610" class="btn">Chat via WhatsApp</a>
 
-<script>
-  document.getElementById("formKontak").addEventListener("submit", function(e){
-    e.preventDefault(); // mencegah reload halaman
+      <h3>Kirim Pesan Cepat</h3>
+      <form id="formKontak" class="form-kontak">
+        <input type="text" id="nama" placeholder="Nama Anda" required>
+        <input type="text" id="desa" placeholder="Nama Desa" required>
+        <input type="date" id="tanggal" required>
+        <input type="number" id="tamu" placeholder="Jumlah Tamu" required>
+        <textarea id="pesan" placeholder="Pesan / Kebutuhan" rows="4"></textarea>
+        <button type="submit" class="btn">Kirim Pesan</button>
+      </form>
+    </section>
+  </main>
 
-    // ambil data form
-    let nama = document.getElementById("nama").value;
-    let desa = document.getElementById("desa").value;
-    let tanggal = document.getElementById("tanggal").value;
-    let tamu = document.getElementById("tamu").value;
-    let pesan = document.getElementById("pesan").value;
+  <footer>
+    <p>&copy; 2025 EO Desa. Semua Hak Dilindungi.</p>
+  </footer>
 
-    // nomor WA tujuan
-    let nomor = "6281382881610"; 
+  <script>
+    document.getElementById("formKontak").addEventListener("submit", function(e){
+      e.preventDefault(); // mencegah reload halaman
 
-    // format pesan
-    let text = `Halo Simpay sawargi,%0ASaya ${nama} dari desa ${desa}.%0AIngin mengadakan acara pada ${tanggal} dengan tamu sekitar ${tamu} orang.%0A%0APesan: ${pesan}`;
+      // ambil data form
+      let nama = document.getElementById("nama").value;
+      let desa = document.getElementById("desa").value;
+      let tanggal = document.getElementById("tanggal").value;
+      let tamu = document.getElementById("tamu").value;
+      let pesan = document.getElementById("pesan").value;
 
-    // arahkan ke WhatsApp
-    window.open(`https://wa.me/${nomor}?text=${text}`, "_blank");
-  });
-</script>
+      // nomor WA tujuan (ubah sesuai nomor EO)
+      let nomor = "6281382881610"; 
+
+      // format pesan
+      let text = `Halo Simpay Sawargi,%0ASaya ${nama} dari desa ${desa}.%0AIngin mengadakan acara pada ${tanggal} dengan tamu sekitar ${tamu} orang.%0A%0APesan: ${pesan}`;
+
+      // buka WhatsApp
+      window.open(`https://wa.me/${nomor}?text=${text}`, "_blank");
+    });
+  </script>
+</body>
+</html>
