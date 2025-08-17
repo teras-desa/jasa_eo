@@ -1,44 +1,39 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontak - Simpay Sawargi</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<section class="kontak">
+  <h2>Hubungi Kami</h2>
+  <p><strong>Alamat:</strong> Keresek Tua Desa Sumurgintung Kecamatan Pagaden Barat, Jl. Gunungsembung-Sumurgintung, Kabupaten Subang</p>
+  <p><strong>Telp:</strong> <a href="tel:081382881610">0813-8288-1610</a></p>
+  <p><strong>Email:</strong> <a href="mailto:wh1274029@gmail.com">wh1274029@gmail.com</a></p>
+  <a href="https://wa.me/6281382881610" class="btn">Chat via WhatsApp</a>
 
-  <header>
-    <h1>Simpay Sawargi</h1>
-    <nav>
-      <a href="beranda.html">Beranda</a>
-      <a href="paket.html">Paket</a>
-      <a href="galeri.html">Galeri</a>
-      <a href="kontak.html" class="active">Kontak</a>
-    </nav>
-  </header>
+  <h3>Kirim Pesan Cepat</h3>
+  <form id="formKontak" class="form-kontak">
+    <input type="text" id="nama" placeholder="Nama Anda" required>
+    <input type="text" id="desa" placeholder="Nama Desa" required>
+    <input type="date" id="tanggal" required>
+    <input type="number" id="tamu" placeholder="Jumlah Tamu" required>
+    <textarea id="pesan" placeholder="Pesan / Kebutuhan" rows="4"></textarea>
+    <button type="submit" class="btn">Kirim Pesan</button>
+  </form>
+</section>
 
-  <section class="kontak">
-    <h2>Hubungi Kami</h2>
-    <p><strong>Alamat:</strong> Event Organizer Simpay Sawargi, Kp. Keresek Tua Desa Sumurgintung Kecamatan Pagaden Barat Kabupaten Subang</p>
-    <p><strong>Telp:</strong> <a href="tel:081382881610">0813-8288-1610</a></p>
-    <p><strong>Email:</strong> <a href="mailto:wh1274029@9mail.com">wh1274029@gmail.com</a></p>
-    <a href="https://wa.me/6281382881610" class="btn">Chat via WhatsApp</a>
+<script>
+  document.getElementById("formKontak").addEventListener("submit", function(e){
+    e.preventDefault(); // mencegah reload halaman
 
-    <h3>Kirim Pesan Cepat</h3>
-    <form action="#" method="post" class="form-kontak">
-      <input type="text" name="nama" placeholder="Nama Anda" required>
-      <input type="text" name="desa" placeholder="Nama Desa" required>
-      <input type="date" name="tanggal" required>
-      <input type="number" name="tamu" placeholder="Jumlah Tamu" required>
-      <textarea name="pesan" placeholder="Pesan / Kebutuhan" rows="4"></textarea>
-      <button type="submit" class="btn">Kirim Pesan</button>
-    </form>
-  </section>
+    // ambil data form
+    let nama = document.getElementById("nama").value;
+    let desa = document.getElementById("desa").value;
+    let tanggal = document.getElementById("tanggal").value;
+    let tamu = document.getElementById("tamu").value;
+    let pesan = document.getElementById("pesan").value;
 
-  <footer>
-    <p>&copy; 2025 Simpay Sawargi. Semua Hak Dilindungi.</p>
-  </footer>
+    // nomor WA tujuan
+    let nomor = "6281382881610"; 
 
-</body>
-</html>
+    // format pesan
+    let text = `Halo Simpay sawargi,%0ASaya ${nama} dari desa ${desa}.%0AIngin mengadakan acara pada ${tanggal} dengan tamu sekitar ${tamu} orang.%0A%0APesan: ${pesan}`;
+
+    // arahkan ke WhatsApp
+    window.open(`https://wa.me/${nomor}?text=${text}`, "_blank");
+  });
+</script>
