@@ -31,7 +31,7 @@ header nav a:hover {
   text-align: center;
   padding: 40px 20px;
   background: url('hajatan.jpg') no-repeat center/cover;
-  color: white;
+  color: green;
 }
 .hero h2 {
   font-size: 24px;
