@@ -157,4 +157,8 @@ footer {
 .btn:hover {
   background-color: #1ebe5b;
 }
+/* Semua judul h2 ditengah */
+h2 {
+  text-align: center;
+}
 
