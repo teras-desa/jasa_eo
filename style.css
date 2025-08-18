@@ -161,4 +161,10 @@ footer {
 h2, p {
   text-align: center;
 }
+.layanan-card img {
+  display: block;
+  margin: 0 auto 10px auto; /* auto kiri kanan untuk center */
+  max-width: 100%;
+  height: auto;
+}
 
