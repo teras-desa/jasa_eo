@@ -186,5 +186,8 @@ h2, p {
   font-size: 14px;
   text-align: center;   /* ubah justify jadi center */
 }
-
+/* Semua judul h3 ditengah */
+h3, p {
+  text-align: center;
+}
 
