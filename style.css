@@ -161,10 +161,30 @@ footer {
 h2, p {
   text-align: center;
 }
+.layanan-card {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;   /* semua isi jadi rata tengah */
+}
+
 .layanan-card img {
   display: block;
-  margin: 0 auto 10px auto; /* auto kiri kanan untuk center */
+  margin: 0 auto 10px auto;
   max-width: 100%;
   height: auto;
 }
+
+.layanan-card h3 {
+  margin: 10px 0 5px;
+  color: #006400;
+  text-align: center;   /* pastikan judul di tengah */
+}
+
+.layanan-card p {
+  font-size: 14px;
+  text-align: center;   /* ubah justify jadi center */
+}
+
 
